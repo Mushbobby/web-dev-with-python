@@ -17,8 +17,10 @@ def get_weather():
     # empty str check
     
     if not bool(city.strip()):
-        city = "London"
-    
+       return render_template(
+           "citynotfound.html"
+           
+       )
     weather_data = get_current_weather(city)
     
     # city not in api db
